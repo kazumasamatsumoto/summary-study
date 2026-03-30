@@ -622,9 +622,7 @@ FEATURE_FLAGS = {
 | ファイル | 内容 |
 |---------|------|
 | JINJA2_BASICS.md | Jinja2テンプレート基礎解説 |
-| superset_dataset.sql | 実装SQL |
-| IMPLEMENTATION_DETAILS.md | 詳細実装解説 |
-| README.md | 概要・クイックリファレンス |
+
 
 ---
 
