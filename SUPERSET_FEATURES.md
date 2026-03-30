@@ -313,7 +313,7 @@ Supersetダッシュボードを外部アプリケーションに埋め込み
 <iframe
   src="https://superset.example.com/superset/dashboard/123/?
        company_id=1&
-       type_id=RCW100&
+       type_id=TEST_MODE&
        gather_date_from=2024-01-01&
        gather_date_to=2024-12-31"
   width="100%"
@@ -335,7 +335,7 @@ Supersetダッシュボードを外部アプリケーションに埋め込み
 &min_note=5
 &region_id=1
 &state=Tokyo
-&type_id=RCW100
+&type_id=TEST_MODE
 ```
 
 これらの値を`url_param()`で取得し、SQLクエリに反映
@@ -498,15 +498,15 @@ WHERE 1=1
 #### データフロー
 
 ```
-URL: ?company_id=1,2,3&type_id=RCW100
+URL: ?company_id=1,2,3&type_id=TEST_MODE
           ↓
-url_param()で取得: '1,2,3', 'RCW100'
+url_param()で取得: '1,2,3', 'TEST_MODE'
           ↓
-split(',')で分割: ['1','2','3'], ['RCW100']
+split(',')で分割: ['1','2','3'], ['TEST_MODE']
           ↓
 Jinja2がSQLを生成:
   WHERE company_id IN ('1','2','3')
-    AND type_id IN ('RCW100')
+    AND type_id IN ('TEST_MODE')
           ↓
 フィルタされたデータのみ返却
 ```
